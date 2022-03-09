@@ -9,6 +9,14 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          ref: gitactions
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
+        with:
+          image: repo/image
+          tags: v1, latest
+          dockerfile: Dockerfile
       - name: pk test
         run: echo "Pk test script"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
