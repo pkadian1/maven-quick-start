@@ -14,9 +14,12 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
-          image: repo/image
+          image: pkadian1/mvn-quickstart
           tags: v1, latest
+          registry: quay.io
           dockerfile: Dockerfile
+          username: pkadian1
+          password: OMNHLJ8P0UR4PLLEBRH8B8HVJQV7TJZV41Q47WANS5S5RYZW5BZSYEQ25ETWCMVU
       - name: pk test
         run: echo "Pk test script"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
