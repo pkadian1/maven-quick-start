@@ -18,7 +18,7 @@ jobs:
           tags: v1, latest
           registry: quay.io
           dockerfile: Dockerfile
-          username: pkadian1
+          username: ${{ github.actor }}
           password: ${{ secrets.QUAY }}
       - name: pk test
         run: echo "Pk test script"
