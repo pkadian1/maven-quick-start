@@ -10,7 +10,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
-          ref: gitactions
+          ref: main
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image in quay
         with:
