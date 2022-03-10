@@ -16,7 +16,6 @@ jobs:
         name: Build & push Docker image in quay
         with:
           image: pkadian1/mvn-quickstart
-          tags: v1
           registry: quay.io
           dockerfile: Dockerfile
           username: pkadian1+do288
