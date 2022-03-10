@@ -1,5 +1,8 @@
 name: GitHub Actions Demo
 on: [push]
+env:
+  REGISTRY_USER: pkadian1+do288
+  IMAGE_REGISTRY: quay.io
 jobs:
   Explore-GitHub-Actions:
     runs-on: self-hosted
@@ -15,8 +18,8 @@ jobs:
       - name: Log in to Red Hat Registry
         uses: redhat-actions/podman-login@v1
         with:
-          registry: quay.io
-          username: pkadian1+do288
+          registry: $ {{env.IMAGE_REGISTRY}}
+          username: $ {{env.REGISTRY_USER}}
           password: ${{ secrets.QUAY }}
       - name: Build Image using Podman
         uses: redhat-actions/buildah-build@v2
