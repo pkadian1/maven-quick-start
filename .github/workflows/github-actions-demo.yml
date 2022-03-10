@@ -18,7 +18,7 @@ jobs:
           registry: quay.io
           username: pkadian1+do288
           password: ${{ secrets.QUAY }}
-      - name: Build Image
+      - name: Build Image using Podman
         uses: redhat-actions/buildah-build@v2
         with: 
           containerfiles: ./Containerfile
