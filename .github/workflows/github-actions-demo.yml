@@ -20,6 +20,7 @@ jobs:
           dockerfile: Dockerfile
           username: pkadian1+do288
           password: ${{ secrets.QUAY }}
+      - run: echo "mv /run/user/$(id -u)/libpod{,-000}"
       - name: pk test
         run: echo "Pk test script"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
