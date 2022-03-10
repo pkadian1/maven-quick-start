@@ -15,11 +15,12 @@ jobs:
         name: Build & push Docker image in quay
         with:
           image: pkadian1/mvn-quickstart
-          tags: v1, latest
+          tags: latest
           registry: quay.io
           dockerfile: Dockerfile
           username: pkadian1+do288
           password: ${{ secrets.QUAY }}
+          push: true
       - name: pk test
         run: echo "Pk test script"
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
